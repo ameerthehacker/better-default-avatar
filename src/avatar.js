@@ -24,23 +24,7 @@ const Avatar = {
           if (!font) {
             bestFontSize = utils.getBestFontSize(size);
             // Choose the jimp provided font
-            switch (bestFontSize) {
-              case 8:
-                font = Jimp.FONT_SANS_8_WHITE;
-                break;
-              case 16:
-                font = Jimp.FONT_SANS_16_WHITE;
-                break;
-              case 32:
-                font = Jimp.FONT_SANS_32_WHITE;
-                break;
-              case 64:
-                font = Jimp.FONT_SANS_64_WHITE;
-                break;
-              case 128:
-                font = Jimp.FONT_SANS_128_WHITE;
-                break;
-            }
+            font = utils.getFont(bestFontSize);
           }
           // Print the user's short name in the avatar
           Jimp.loadFont(font, (err, font) => {
@@ -67,6 +51,28 @@ const Avatar = {
       avatar.write(path, err => {
         if (!err) {
           resolve();
+        } else {
+          reject(err);
+        }
+      });
+    });
+  },
+  getBase64(avatar, mime) {
+    return new Promise((resolve, reject) => {
+      avatar.getBase64(utils.getMime(mime), (err, result) => {
+        if (!err) {
+          resolve(result);
+        } else {
+          reject(err);
+        }
+      });
+    });
+  },
+  getBuffer(avatar, mime) {
+    return new Promise((resolve, reject) => {
+      avatar.getBuffer(utils.getMime(mime), (err, result) => {
+        if (!err) {
+          resolve(result);
         } else {
           reject(err);
         }

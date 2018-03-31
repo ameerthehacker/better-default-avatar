@@ -1,4 +1,5 @@
 const randomColor = require("randomcolor");
+const Jimp = require("jimp");
 
 const utils = {
   getRandomColorCode() {
@@ -49,6 +50,34 @@ const utils = {
     }
 
     return bestFontSize;
+  },
+  getFont(bestFontSize) {
+    switch (bestFontSize) {
+      case 8:
+        return Jimp.FONT_SANS_8_WHITE;
+      case 16:
+        return Jimp.FONT_SANS_16_WHITE;
+      case 32:
+        return Jimp.FONT_SANS_32_WHITE;
+      case 64:
+        return Jimp.FONT_SANS_64_WHITE;
+      case 128:
+        return Jimp.FONT_SANS_128_WHITE;
+    }
+  },
+  getMime(mime) {
+    mime = mime || "";
+
+    switch (mime.toLowerCase()) {
+      case ("jpeg", "jpg"):
+        return Jimp.MIME_JPEG;
+      case "png":
+        return Jimp.MIME_PNG;
+      case "bmp":
+        return Jimp.MIME_BMP;
+      default:
+        return Jimp.MIME_JPEG;
+    }
   }
 };
 
