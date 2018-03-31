@@ -1,7 +1,7 @@
 const Jimp = require("jimp");
 const utils = require("./utils");
 
-const Avatar = {
+const AvatarGenerator = {
   generate(options) {
     // Set the options to empty object if is provided
     options = options || {};
@@ -81,4 +81,4 @@ const Avatar = {
   }
 };
 
-module.exports = Avatar;
+module.exports = AvatarGenerator;
