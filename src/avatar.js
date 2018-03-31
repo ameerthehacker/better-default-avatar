@@ -5,7 +5,7 @@ const AvatarGenerator = {
   generate(options) {
     // Set the options to empty object if is provided
     options = options || {};
-    const size = options.size || 40;
+    const size = parseInt(options.size || 40);
     const name = options.name;
     const bgColor = options.bgColor || utils.getRandomColorCode();
     let font = options.font;
