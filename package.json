@@ -1,18 +1,15 @@
 {
-  "name": "named-avatar-generator",
+  "name": "better-default-avatar",
   "version": "0.0.2",
-  "description": "Generate avatars with first letter of user's first and last name",
+  "description":
+    "Generate avatars with first letter of user's first and last name",
   "main": "main.js",
   "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ameerthehacker/named-avatar-generator.git"
   },
-  "keywords": [
-    "avatar",
-    "profile",
-    "pic"
-  ],
+  "keywords": ["default-avatar", "profile-pic"],
   "author": "ameerthehacker",
   "license": "MIT",
   "bugs": {
