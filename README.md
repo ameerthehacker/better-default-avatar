@@ -1,4 +1,4 @@
-# Named Avatar Generator
+# Better Default Avatar
 
 Generate default avatars based on user's name without a sweat
 
