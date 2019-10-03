@@ -11,7 +11,7 @@ const utils = {
   },
   getShortName(name) {
     const words = name.split(" ");
-    if (words.length == 0) {
+    if (name.length == 0) {
       throw new Error("name is empty");
     } else if (words.length == 1) {
       // Return the first character of first name in caps
